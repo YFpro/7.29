@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="xxx">
+
+    </div>
+    <script>
+    function daojishi(a,s,d,f,g,h){
+        var end=new Date(a,s,d,f,g,h);
+        
+        var endtime=end.getTime()/1000;
+                   
+           setInterval(function(){
+                  var current=new Date();
+                  var currentTime=current.getTime()/1000;
+                  var diff=endtime-currentTime;
+                  if (diff<0){
+                    console.log("输入错误");
+                      return;
+                      
+                  }
+                  var day=parseInt(diff/(60*60*24));
+                  diff%=(60*60*24);
+                  var hours=parseInt(diff/(60*60));
+                  diff%=60*60;
+                  var min=parseInt(diff/60);
+                  diff%=60;
+                  var sed=parseInt(diff);
+                 xxx.innerHTML="剩余时间为"+day+"天"+hours+"小时"+min+"分钟"+sed+"秒";
+           },1000);}
+           var xxx=document.querySelector(".xxx");
+           daojishi(1990,8,10,10,10,10);
+        </script>
+</body>
+</html>
